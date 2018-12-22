@@ -43,12 +43,12 @@ $app->get('/coba', function() use($app){
   return str_repeat('Hello', getenv('TIMES'));
 });
 
-
-
 $app->get('/cowsay', function()use($app){
   $app['monolog']->addDebug('cowsay');
   return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
+
+//database akses
 
 $app->get('/db/', function() use($app) {
   $st = $app['pdo']->prepare('SELECT name FROM test_table');

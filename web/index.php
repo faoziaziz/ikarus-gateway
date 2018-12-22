@@ -42,6 +42,12 @@ $app->get('/coba', function() use($app){
   $app['monolog']->addDebug('logging output.');
   return str_repeat('Hello', getenv('TIMES'));
 });
+//test berikutnya
+
+$app->get('/ngaco', function()use($app){
+  $app['monolog']->addDebug('ngaco');
+  return $app['php']->render('ngaco.php');
+});
 
 $app->get('/cowsay', function()use($app){
   $app['monolog']->addDebug('cowsay');
